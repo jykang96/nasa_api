@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* #container{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+} */
+
+.bg-light-blue{
+  background-color: #a5bad7
+}
+
+.nasa-font{
+  font-family: 'Trispace', sans-serif;
+}
+
+.nasa-emoji{
+  font-family: 'NASA Dings', sans-serif;
+}
+
+.loading{
+  font-size: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -300px 0 0 -150px;
+  animation: color-change 1.5s infinite;
+}
+
+@keyframes color-change {
+  0% { color: #fa1510; }
+  25% { color: #f38e8c; }
+  50% { color: #043c94; }
+  75% { color: #5c80b5; }
+  100% { color: #6d5784; }
+}
+
+
+
+
+.icon {
+  fill: transparent;
+  stroke: var(--pink);
+  stroke-width: 20;
+  cursor: pointer;
+  position: relative;
+
+  svg {
+    overflow: visible;
+    width: 10rem;
+  }
+
+  path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+  }
+
+  .heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+  }
+
+  .heart-main:hover path {
+    animation: stroke-animation 2s ease-in-out forwards;
+  }
+
+  .heart-main:hover ~ .heart-background path {
+    animation: fade-animation 2s ease-in-out forwards;
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: var(--pink);
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: var(--pink);
+  }
+}
+
+@keyframes fade-animation {
+  70% {
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: var(--pink-light);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
